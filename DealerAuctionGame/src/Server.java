@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 public class Server {
     
     private static int playerNumber = 1;
-    private static final int PORT = 9090;
+    private static final int PORT = 6666;
     // private static PrintWriter output;
     private static ArrayList<ClientHandler> clients = new ArrayList<>();
     private static ExecutorService pool = Executors.newFixedThreadPool(4);
@@ -17,7 +17,7 @@ public class Server {
     public static void startServer() throws IOException {
         ServerSocket listener = new ServerSocket(PORT);
         // output = new PrintWriter(client.getOutputStream(), autoFlush);
-        AuctionGame game = new AuctionGame(listener);
+        AuctionGame game = new AuctionGame(listener, clients);
         final ScheduledThreadPoolExecutor newGame = new ScheduledThreadPoolExecutor(1);
         System.out.println("server up and running...waiting for players to join");  
         addPlayer(listener);               
@@ -42,6 +42,10 @@ public class Server {
         clients.add(clientThread);
         ++playerNumber;
         pool.execute(clientThread);
+    }
+
+    public static int getPlayers() {
+        return playerNumber;
     }
     
     // private static anyPlayerLeft() {
