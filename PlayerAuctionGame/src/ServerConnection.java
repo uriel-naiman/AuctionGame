@@ -2,7 +2,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
-
+ /**second thread for listening to server (dealer) at all times
+  * add the prefix "Dealer:" to every message coming from the server.
+  */
 public class ServerConnection implements Runnable {
     private Socket server;
     private BufferedReader input;

@@ -17,5 +17,12 @@
         "titleBar.inactiveBackground": "#21573299",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#215732"
+    "peacock.color": "#215732",
+    "java.configuration.runtimes": [
+        {
+          "name": "JavaSE-16",
+          "path": "/path/to/jdk-16",
+          "default": true
+        },
+      ],
 }

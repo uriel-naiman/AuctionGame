@@ -1,10 +1,15 @@
 import java.net.*;
 import java.io.*;  
 
+/** Class for connecting to game server on local host
+ * for further development can add functionality for different
+ * computers as well.
+ * runs on two threads: one for input and output of the keyboard
+ * and the second for listening to the server- running parallel*/
 public class Client {
 
     private static final String SERVER_IP = "127.0.0.1";
-    private static final int PORT = 9090;
+    private static final int PORT = 6666;
     
     public static void startClientServer() throws IOException, InterruptedException {
         
